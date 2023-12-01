@@ -1,12 +1,15 @@
 <script setup>
-    import { computed } from 'vue';
+    import { computed, onMounted } from 'vue';
     import store from '../store';
 
-    const produtos = computed(() => store.state.produtos);
+    onMounted(() => {
+        fetch("https://fakestoreapi.com/products")
+          .then((res) => res.json())
+          .then((json) => console.log(json));
+    });
 </script>
 
 <template>
     <div>
-        <pre>{{ produtos }}</pre>
     </div>
 </template>
