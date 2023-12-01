@@ -1,8 +1,8 @@
 <script setup>
-import { computed } from 'vue';
-import store from '../store';
+    import { computed } from 'vue';
+    import store from '../store';
 
-const produtos = computed(() => store.state.produtos)
+    const produtos = computed(() => store.state.produtos);
 </script>
 
 <template>
