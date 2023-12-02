@@ -3,6 +3,7 @@ import Index from '../views/Index.vue'
 import CreateProduto from '../views/CreateProduto.vue'
 import EditProduto from '../views/EditProduto.vue'
 import ShowProduto from '../views/ShowProduto.vue'
+import Login from '../views/Login.vue'
 
 const routes = [
     {
@@ -25,6 +26,12 @@ const routes = [
         name: 'Show',
         component: ShowProduto
     },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+
 ];
 
 const router = createRouter({

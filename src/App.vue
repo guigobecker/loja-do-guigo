@@ -20,12 +20,14 @@ import { RouterLink, RouterView } from "vue-router";
           >
         </RouterLink>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Login
-          </button>
+          <RouterLink :to="{name: 'Login'}">
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Login
+            </button>
+          </RouterLink>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -71,8 +73,7 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
     </nav>
 
-    <RouterView class="mt-20"
-    ></RouterView>
+    <RouterView class="mt-20"></RouterView>
   </div>
 </template>
 
