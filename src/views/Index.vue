@@ -23,7 +23,6 @@ onMounted(() => {
     .then((json) => (produtos.value = json))
     .then((json) => console.log(json));
 });
-
 </script>
 
 <template>
