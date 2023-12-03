@@ -54,10 +54,10 @@ onMounted(() => {
           {{ produto?.category }}
         </h4>
         <h4 class="mb-3 text-l font-medium tracking-tight text-gray-900">
-          {{ produto?.rating.rate }}
+          {{ produto?.rating.rate }} / 5
         </h4>
         <h4 class="mb-3 text-l font-medium tracking-tight text-gray-900">
-          {{ produto?.rating.count }}
+          {{ produto?.rating.count }} avaliações
         </h4>
         <p class="mb-3 font-normal text-gray-700">{{ produto?.description }}</p>
         <div class="space-x-2">

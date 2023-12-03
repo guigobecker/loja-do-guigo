@@ -47,7 +47,7 @@ function updateProduto(id: number) {
     return;
   } else {
     router.push({ name: "Index" });
-    alert("Produto atualizado com sucesso.");
+    alert("Produto atualizado com sucesso! (Mentira não vai atualizar nada)");
   }
 }
 onMounted(() => {

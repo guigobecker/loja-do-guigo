@@ -4,7 +4,6 @@ import { useRouter } from "vue-router";
 
 const username = ref("");
 const password = ref("");
-const loginError = ref(false);
 
 const router = useRouter();
 
@@ -19,11 +18,12 @@ const login = async () => {
     );
 
     if (isValidUser) {
-      console.log("Login realizado com sucesso.");
+      alert("Login realizado com sucesso!");
       router.push({ name: "Index" });
-      loginError.value = false;
     } else {
-      loginError.value = true;
+      username.value = "";
+      password.value = "";
+      alert("Usuário e/ou senha inválidos. Tente novamente.");
     }
   } catch (error) {
     console.error("Erro ao acessar usuários:", error);
@@ -66,12 +66,5 @@ const login = async () => {
         Login
       </button>
     </form>
-    <div
-      v-if="loginError"
-      class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
-      role="alert"
-    >
-      <span class="font-medium">Usuário e/ou senha inválidos.</span> Tente novamente.
-    </div>
   </div>
 </template>
