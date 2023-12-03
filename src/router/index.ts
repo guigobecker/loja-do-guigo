@@ -7,7 +7,7 @@ import Login from '../views/Login.vue'
 
 const routes = [
     {
-        path: '/produtos',
+        path: '/',
         name: 'Index',
         component: Index
     },
