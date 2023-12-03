@@ -8,6 +8,8 @@ const loginError = ref(false);
 
 const router = useRouter();
 
+const isLoggedIn = ref(false);
+
 const login = async () => {
   try {
     const response = await fetch("https://fakestoreapi.com/users");
@@ -22,7 +24,7 @@ const login = async () => {
       console.log("Login realizado com sucesso.");
       router.push({ name: "Index" });
       loginError.value = false;
-
+      isLoggedIn.value = true;
     } else {
       loginError.value = true;
     }
@@ -34,7 +36,7 @@ const login = async () => {
 
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
-    <form @submit.prevent="login" class="max-w-sm mx-auto">
+    <form @submit.prevent="login" class="max-w-xl w-full mx-auto">
       <div class="mb-5">
         <label
           for="usuario"
@@ -62,13 +64,17 @@ const login = async () => {
       </div>
       <button
         type="submit"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
       >
         Login
       </button>
     </form>
-    <div v-if="loginError" class="error-message">
-      Usuário ou senha inválido, tente novamente.
+    <div
+      v-if="loginError"
+      class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+      role="alert"
+    >
+      <span class="font-medium">Usuário e/ou senha inválidos.</span> Tente novamente.
     </div>
   </div>
 </template>
