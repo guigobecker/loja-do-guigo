@@ -8,8 +8,6 @@ const loginError = ref(false);
 
 const router = useRouter();
 
-const isLoggedIn = ref(false);
-
 const login = async () => {
   try {
     const response = await fetch("https://fakestoreapi.com/users");
@@ -24,7 +22,6 @@ const login = async () => {
       console.log("Login realizado com sucesso.");
       router.push({ name: "Index" });
       loginError.value = false;
-      isLoggedIn.value = true;
     } else {
       loginError.value = true;
     }
