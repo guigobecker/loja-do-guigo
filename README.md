@@ -13,4 +13,4 @@ Cliente Web de uma loja virtual, desenvolvido em Vue, TypeScript e Tailwind. As 
   <li>Efetuar login com um usuário existente.</li>
 </ul>
 
-<sub>OBS: por se tratar de uma API pública, os produtos criados, editados e deletados não alteram os dados na API.</sub>
+<sub>OBS: por se tratar de uma API pública, os métodos ‘criar’, ‘editar’ e ‘deletar’ não alteram os dados permanentemente.</sub>
